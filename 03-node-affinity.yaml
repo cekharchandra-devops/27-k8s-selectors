@@ -30,7 +30,7 @@ spec:
               - key: hostname
                 operator: In
                 values:
-                  - acctsrv
+                  - srchsrv
   containers:
     - name: nginx
       image: nginx
