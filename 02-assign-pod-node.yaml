@@ -11,3 +11,7 @@ spec:
 
 
 # kubectl label nodes ip-192-168-18-187.ec2.internal hostname=acctsrv
+
+# if the node is tainted, then we have to add toleratons as well along with nodeselector
+
+# https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/
