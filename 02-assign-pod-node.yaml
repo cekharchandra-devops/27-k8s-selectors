@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: assign-pod-node
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  nodeSelector:
+    hostname=acctsrv
+
+
+# kubectl label nodes ip-192-168-18-187.ec2.internal hostname=acctsrv

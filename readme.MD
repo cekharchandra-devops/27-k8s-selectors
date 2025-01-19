@@ -63,3 +63,21 @@ spec:
     image: nginx
 
 ```
+
+key: The key of the taint to tolerate.
+
+operator: The operator to use for the key comparison. Can be Equal or Exists.
+
+value: The value of the taint to tolerate.
+
+effect: The effect of the taint to tolerate. Can be `NoSchedule, PreferNoSchedule, or NoExecute`
+
+# Affinity and anti-affinity
+
+Label Node:
+
+```
+kubectl label nodes ip-192-168-18-187.ec2.internal hardware=gpu
+```
+
+https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/
