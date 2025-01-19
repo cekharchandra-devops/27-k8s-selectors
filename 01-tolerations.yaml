@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: pod-tolerate
   labels:
-    tained: true
+    tained: "true"
 spec:
   tolerations:
     - key: "hardware"
