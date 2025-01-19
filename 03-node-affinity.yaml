@@ -15,6 +15,25 @@ spec:
   containers:
     - name: nginx
       image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-affinity-preferred-weight
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+              - key: hostname
+                operator: In
+                values:
+                  - acctsrv
+  containers:
+    - name: nginx
+      image: nginx
 
 # kubectl label nodes ip-192-168-18-187.ec2.internal hostname=acctsrv
 
