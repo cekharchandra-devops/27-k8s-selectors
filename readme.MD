@@ -14,7 +14,17 @@ Applying a Taint to a Node:
 
 ```
 kubectl taint nodes <node-name> key=value:NoSchedule
+ex: kubectl taint node ip-192-168-18-187.ec2.internal hardware=gpu:NoSchedule
 ```
+
+Remove the Taint from the Node:
+
+```
+kubectl taint nodes node1 hardware:NoSchedule-
+ex: kubectl taint node ip-192-168-18-187.ec2.internal hardware=gpu:NoSchedule-
+```
+
+![alt text](image.png)
 
 key=value: The key-value pair for the taint.
 NoSchedule: The effect of the taint. Other possible effects are PreferNoSchedule and NoExecute.
