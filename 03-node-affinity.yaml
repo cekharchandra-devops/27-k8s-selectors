@@ -34,7 +34,15 @@ spec:
   containers:
     - name: nginx
       image: nginx
+#  Even host is not labeld with hostname: srchsrv, still scheduler scheduled the pod on other suitable nodes. 
 
 # kubectl label nodes ip-192-168-18-187.ec2.internal hostname=acctsrv
 
 # during scheduling node should have label "hostname: acctsrv"
+
+# preferredDuringSchedulingIgnoredDuringExecution in Kubernetes Node Affinity
+# In Kubernetes, preferredDuringSchedulingIgnoredDuringExecution is a type of node affinity that specifies a preference 
+# for scheduling pods on nodes that match certain criteria. Unlike requiredDuringSchedulingIgnoredDuringExecution, 
+# which mandates that the pod can only be scheduled on nodes that meet the criteria, 
+# preferredDuringSchedulingIgnoredDuringExecution expresses a preference but does not enforce it strictly. 
+# If no nodes match the preferred criteria, the pod can still be scheduled on other nodes.
