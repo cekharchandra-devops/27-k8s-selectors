@@ -24,6 +24,18 @@ kubectl taint nodes node1 hardware:NoSchedule-
 ex: kubectl taint node ip-192-168-18-187.ec2.internal hardware=gpu:NoSchedule-
 ```
 
+You can use kubectl get nodes with a jsonpath expression to list nodes that have taints.
+
+```
+kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.taints[*].key}{"\n"}{end}' | grep -v '^\s*$'
+```
+
+You can also use kubectl get nodes with jq to filter and display nodes with taints.
+
+```
+kubectl get nodes -o json | jq -r '.items[] | select(.spec.taints) | .metadata.name'
+```
+
 ![alt text](image.png)
 
 key=value: The key-value pair for the taint.
